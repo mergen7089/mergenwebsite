@@ -1,3 +1,13 @@
+/* =========================================================
+   MERGEN CSS ARCHITECTURE / SECTION INDEX
+   01 Header · 02 Hero · 03 Layers · 04 Generic · 05 Slider01
+   06 Slider02 · 07 Contact · 08 Guide · 09 Collection
+   10 Materials · 11 Signature V3 · 12 Experience · 13 FAQ
+   14 About · 15 Footer · 16 Global UI · 17 Responsive
+   18 Theme
+   Existing cascade order is preserved intentionally.
+   ========================================================= */
+
 /*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
@@ -8227,3 +8237,25 @@ html:not(.dark) body {
   background: var(--mg-bg);
   color: var(--mg-text);
 }
+
+
+/* =========================================================
+   18 — LIGHT MODE / LUXURY SURFACE
+   ========================================================= */
+html:not(.dark) #collection { background:#e8e3d8 !important; color:#17201c !important; }
+html:not(.dark) #materials,
+html:not(.dark) #mergen-v3,
+html:not(.dark) #tabs,
+html:not(.dark) #faq,
+html:not(.dark) #about { background:#f1eee7; color:#17201c; }
+html:not(.dark) #slider02,
+html:not(.dark) #slider03,
+html:not(.dark) .mergen-contact { background:#e8e3d8; color:#17201c; }
+html:not(.dark) .ms-card,
+html:not(.dark) .custom-card { background:rgba(255,255,255,.42); border-color:rgba(23,32,28,.12); }
+html:not(.dark) .faq-item { background:transparent; }
+html:not(.dark) .faq-q,
+html:not(.dark) .faq-a,
+html:not(.dark) .section-title { color:#17201c; }
+html:not(.dark) .faq-a,
+html:not(.dark) .eyebrow { color:#69736d; }
