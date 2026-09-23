@@ -36,7 +36,7 @@
 
 
 
-/* -------------> Hero Slider <------------- */
+/* ==================== 03 — HERO ==================== */
 $(function(){
   const $hero = $('.mergen-hero');
   const slides = $('.mergen-slide').toArray();
@@ -107,7 +107,7 @@ $(function(){
 });
 
 
-/* ---------- ۲) ریویل هنگام اسکرول (fallback بدون AOS) ---------- */
+/* ==================== 17 — SCROLL REVEAL ==================== */
 document.addEventListener('DOMContentLoaded', () => {
   const items = document.querySelectorAll('[data-reveal]');
   if (!('IntersectionObserver' in window) || !items.length) {
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
   items.forEach(el => io.observe(el));
 });
 
-/* ---------- ۳) موبایل: افکنواس منو ---------- */
+/* ==================== 02 — HEADER / MOBILE ==================== */
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-offcanvas-open]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -165,7 +165,7 @@ function closeOffcanvas(panel) {
   setTimeout(() => panel.classList.add('hidden'), 350);
 }
 
-/* ---------- ۴) مودال محصول (Quick View) ---------- */
+/* ==================== 07 — QUICK VIEW ==================== */
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('productModal');
   if (!modal) return;
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 });
 
-/* ---------- ۵) تب‌ها (Nav Tab) ---------- */
+/* ==================== 13 — EXPERIENCE / TABS ==================== */
 document.addEventListener('DOMContentLoaded', () => {
   const tabWrap = document.querySelector('[data-tabs]');
   if (!tabWrap) return;
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-/* ---------- ۶) کروسل ۵ — کارت‌های لوکس با فوکوس مرکزی ---------- */
+/* ==================== 06 — SLIDER 01 ==================== */
 document.addEventListener('DOMContentLoaded', () => {
   const track = document.getElementById('carousel5Track');
   if (!track) return;
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
   track.addEventListener('mouseleave', () => { autoTimer = setInterval(() => scrollByCard(-1), 4500); });
 });
 
-/* ---------- ۷) کروسل ۶ — دو ردیفه با فوکوس و حرکت متناوب ---------- */
+/* ==================== 07 — SLIDER 02 ==================== */
 (function carousel6() {
   document.addEventListener('DOMContentLoaded', () => {
     const scene = document.getElementById('c6Scene');
@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 })();
 
-/* ---------- ۸) بازگشت به بالا ---------- */
+/* ==================== 17 — BACK TO TOP ==================== */
 document.addEventListener('DOMContentLoaded', () => {
   const btn = document.getElementById('backToTop');
   if (!btn) return;
@@ -415,7 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 });
 
-/* ---------- ۹) هدر: سایه هنگام اسکرول ---------- */
+/* ==================== 02 — HEADER / SCROLL ==================== */
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('siteHeader');
   if (!header) return;
@@ -433,17 +433,17 @@ document.addEventListener('DOMContentLoaded', () => {
    after visual verification.
    ========================================================= */
 
-/* THEME + HEADER */
+/* ==================== 01 — THEME + MEGA MENU ==================== */
     const html=document.documentElement; const saved=localStorage.getItem('mergen-theme'); if(saved==='dark')html.classList.add('dark');
     const themeToggle=document.getElementById('themeToggle'); themeToggle?.addEventListener('click',()=>{html.classList.toggle('dark');localStorage.setItem('mergen-theme',html.classList.contains('dark')?'dark':'light')});
     const sticky=document.getElementById('sticky');window.addEventListener('scroll',()=>{sticky.classList.toggle('show',scrollY>150);document.getElementById('backTop').classList.toggle('show',scrollY>650)},{passive:true});
     const mega=document.getElementById('megaMenu'),overlay=document.getElementById('megaOverlay'),megaButtons=[...document.querySelectorAll('.mega-nav')];const megaData={products:['MERGEN INTERIOR / COLLECTION','طراحی برای<br>زندگی متفاوت',['مبلمان','مبل راحتی','مبل مدرن','صندلی','میز جلو مبلی'],['اتاق خواب','سرویس خواب','تخت و دراور','کمد دیواری','کلوزت روم'],['دکوراسیون','کابینت','TV Wall','دکور فروشگاه','طراحی داخلی']],living:['COLLECTION / 01','Living<br>Collection',['مجموعه‌ها','مبل مدرن','مبل مینیمال','مبل راحتی'],['تکمیل فضا','میز جلو مبلی','کنسول','میز عسلی'],['خدمات','طراحی سفارشی','اجرای پروژه','مشاوره']],bedroom:['COLLECTION / 02','Bedroom<br>Collection',['محصولات','تخت خواب','سرویس کامل','میز آرایش'],['فضا','کمد دیواری','کلوزت روم','دراور'],['سفارش','طراحی اختصاصی','مشاوره','اندازه‌گیری']],tables:['COLLECTION / 03','Tables<br>& Chairs',['میزها','میز ناهارخوری','میز مدیریت','میز کامپیوتر'],['میزهای کوچک','جلو مبلی','میز عسلی','کنسول'],['صندلی','صندلی ناهارخوری','صندلی اداری','صندلی سفارشی']],interior:['INTERIOR DESIGN','Architecture<br>of Living',['فضای داخلی','کابینت','TV Wall','دکور فروشگاه'],['چوب و کف','درب چوبی','پارکت','قرنیز و روکوب'],['پروژه','طراحی داخلی','اجرای کامل','پروژه تجاری']]};function renderMega(key){const d=megaData[key]||megaData.products;document.getElementById('megaKicker').innerHTML=d[0];document.getElementById('megaTitle').innerHTML=d[1];['megaCol1','megaCol2','megaCol3'].forEach((id,n)=>{document.getElementById(id.replace('megaCol','megaCol')+'Title').textContent=d[n+2][0];document.getElementById(id).innerHTML=d[n+2].slice(1).map(x=>`<a href="#${key==='bedroom'?'layers':key==='interior'?'slider02':'slider01'}">${x}</a>`).join('')})}function openMega(key){renderMega(key);mega.classList.add('open');overlay.classList.add('open');megaButtons.forEach(b=>b.classList.toggle('active',b.dataset.mega===key))}function closeMega(){mega.classList.remove('open');overlay.classList.remove('open');megaButtons.forEach(b=>b.classList.remove('active'))}megaButtons.forEach(b=>{b.addEventListener('mouseenter',()=>openMega(b.dataset.mega));b.addEventListener('click',e=>{e.stopPropagation();openMega(b.dataset.mega)})});document.getElementById('menuButton').addEventListener('click',()=>mega.classList.toggle('open'));document.getElementById('mobileToggle').addEventListener('click',()=>mega.classList.toggle('open'));overlay.addEventListener('click',closeMega);document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMega()});mega.addEventListener('mouseleave',()=>closeMega());
-    /* HERO */
+    /* ==================== 03 — HERO / MIGRATED ==================== */
     $(function(){const $hero=$('.mergen-hero'),slides=$('.mergen-slide').toArray(),$title=$('.hero-title'),$kicker=$('.hero-kicker'),$desc=$('.hero-desc'),$current=$('#slide-current'),$progress=$('#progress'),$thumbs=$('#thumbs'),duration=7000;slides.forEach((s,i)=>{const bg=s.querySelector('.slide-bg').style.backgroundImage.slice(5,-2);$thumbs.append(`<button class="hero-thumb ${i===0?'active':''}" data-index="${i}"><img src="${bg}" alt=""><div class="text-right"><div class="hero-thumb-num">0${i+1}</div><div class="hero-thumb-title">${s.dataset.title}</div><div class="hero-thumb-desc">${s.dataset.desc}</div></div></button>`)});function ui(i){const s=slides[i];$kicker.text(s.dataset.kicker);$desc.text(s.dataset.desc);$current.text(String(i+1).padStart(2,'0'));$progress.css({transition:'none',width:'0%'});requestAnimationFrame(()=>requestAnimationFrame(()=>{$progress.css({transition:`width ${duration}ms linear`,width:'100%'})}));$('.hero-thumb').removeClass('active').eq(i).addClass('active')} $hero.owlCarousel({rtl:true,items:1,loop:true,dots:false,nav:false,autoplay:true,autoplayTimeout:duration,smartSpeed:1100,mouseDrag:true,touchDrag:true,animateOut:'fadeOut',animateIn:'fadeIn'});$hero.on('changed.owl.carousel',e=>ui(e.item.index%slides.length));$('.prev').on('click',()=> $hero.trigger('prev.owl.carousel'));$('.next').on('click',()=> $hero.trigger('next.owl.carousel'));$thumbs.on('click','.hero-thumb',function(){$hero.trigger('to.owl.carousel',[$(this).data('index'),900,true])});ui(0);
-    /* FURNITURE */ $('#furnitureCarousel').owlCarousel({rtl:true,loop:true,center:true,margin:20,nav:true,dots:false,autoplay:true,autoplayTimeout:3000,autoplayHoverPause:true,smartSpeed:700,responsive:{0:{items:1},600:{items:2},900:{items:3}}}); $('#customCarousel').owlCarousel({rtl:true,loop:true,center:true,margin:22,nav:true,dots:false,autoplay:true,autoplayTimeout:3200,autoplayHoverPause:true,smartSpeed:750,responsive:{0:{items:1.1},600:{items:2},900:{items:3}}});});
-    /* LAYERS */
+    /* ==================== 06 — SLIDER 01 / FURNITURE ==================== */ $('#furnitureCarousel').owlCarousel({rtl:true,loop:true,center:true,margin:20,nav:true,dots:false,autoplay:true,autoplayTimeout:3000,autoplayHoverPause:true,smartSpeed:700,responsive:{0:{items:1},600:{items:2},900:{items:3}}}); $('#customCarousel').owlCarousel({rtl:true,loop:true,center:true,margin:22,nav:true,dots:false,autoplay:true,autoplayTimeout:3200,autoplayHoverPause:true,smartSpeed:750,responsive:{0:{items:1.1},600:{items:2},900:{items:3}}});});
+    /* ==================== 04 — LAYERS ==================== */
     const layers=[...document.querySelectorAll('[data-layer]')];function updateLayers(){const vh=innerHeight;layers.forEach((s,i)=>{const next=layers[i+1];const r=s.getBoundingClientRect();let p=next?Math.max(0,Math.min(1,(vh-next.getBoundingClientRect().top)/vh)):0;let outgoing=p>0&&p<1;s.style.transform=`scale(${1-p*.055})`;s.style.opacity=1-p*.88;s.style.filter=`blur(${p*2.8}px)`;s.classList.toggle('outgoing',outgoing);s.classList.toggle('is-current',p<.05);const bg=s.querySelector('.layer-bg');if(bg)bg.style.transform=`scale(${1.04+p*.08}) translateY(${-p*2}%)`})}addEventListener('scroll',updateLayers,{passive:true});addEventListener('resize',updateLayers);updateLayers();
-    /* SLIDER 02 — Focus Two Row / scoped replacement */
+    /* ==================== 07 — SLIDER 02 / FOCUS ==================== */
     (() => {
         const scene = document.querySelector('#slider02 .ms-scene');
         if (!scene) return;
@@ -598,24 +598,24 @@ document.addEventListener('DOMContentLoaded', () => {
         setFocus('row1');
         start();
     })();
-    /* GUIDE */
+    /* ==================== 09 — SHOPPING GUIDE ==================== */
     const guide=document.getElementById('guide');
     document.getElementById('guideOpen').onclick=()=>guide.classList.add('open');
     document.getElementById('guideClose').onclick=()=>guide.classList.remove('open');
     guide.addEventListener('click',e=>{if(e.target===guide)guide.classList.remove('open')});
-    /* COLLECTION */
+    /* ==================== 10 — COLLECTION ==================== */
 
-    /* V3 */
+    /* ==================== 12 — SIGNATURE V3 ==================== */
 
-    /* NAV TABS — auto rotate + hover */
+    /* ==================== 13 — EXPERIENCE / NAV TABS ==================== */
     const mTabs=[...document.querySelectorAll('#tabs .mergen-tab')],mPanels=[...document.querySelectorAll('#tabs .mergen-tab-content')];let mIndex=0,mTimer;function activateMTab(i){mIndex=i;mTabs.forEach((b,n)=>b.classList.toggle('active',n===i));mPanels.forEach((p,n)=>p.classList.toggle('active',n===i));}function startMTabs(){clearInterval(mTimer);mTimer=setInterval(()=>activateMTab((mIndex+1)%mTabs.length),5000)}mTabs.forEach((b,i)=>b.addEventListener('mouseenter',()=>{activateMTab(i);startMTabs()}));startMTabs();
-    /* FAQ */
+    /* ==================== 14 — FAQ ==================== */
     document.querySelectorAll('.faq-q').forEach(q=>q.onclick=()=>{const item=q.parentElement;document.querySelectorAll('.faq-item').forEach(x=>{if(x!==item)x.classList.remove('open')});item.classList.toggle('open')});
-    /* BACK TOP */
+    /* ==================== 17 — BACK TO TOP / SECTION NAV ==================== */
     document.getElementById('backTop').onclick=()=>scrollTo({top:0,behavior:'smooth'});
     /* active second nav */
     const links=[...document.querySelectorAll('.section-nav a')],targets=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-35% 0px -55%'});targets.forEach(x=>io.observe(x));
-    /* Vertical Collection — supplied version */
+    /* ==================== 13 — EXPERIENCE / VERTICAL ==================== */
     const vcCollections=[
     {number:'01',title:'کنسول',english:'BEDROOM COLLECTION',description:'طراحی و اجرای سرویس خواب مدرن و سفارشی با جزئیات دقیق، متناسب با فضای شما.',image:'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=2000&q=90'},
     {number:'02',title:'کاور رادیاتور',english:'LIVING COLLECTION',description:'مبلمان مدرن و لوکس برای ایجاد فضایی متفاوت، گرم و ماندگار.',image:'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=2000&q=90'},
@@ -629,7 +629,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('#collection .collection').forEach(btn=>{const i=+btn.dataset.index;btn.addEventListener('mouseenter',()=>selectCollection(i));btn.addEventListener('click',()=>selectCollection(i))});
     let autoPlay=setInterval(()=>selectCollection((currentIndex+1)%vcCollections.length),7000);const collectionHero=document.getElementById('hero');collectionHero.addEventListener('mouseenter',()=>clearInterval(autoPlay));collectionHero.addEventListener('mouseleave',()=>{clearInterval(autoPlay);autoPlay=setInterval(()=>selectCollection((currentIndex+1)%vcCollections.length),7000)});
 
-    /* Signature Collection V3 — supplied version */
+    /* ==================== 12 — SIGNATURE V3 / DATA ==================== */
     const v3Products=[
     {title:'مدل اول',desc:'آرامش در جزئیات',img:'./IMG/naharkhori1.jfif'},
     {title:'مدل دوم',desc:'راحتی در کنار زیبایی',img:'./IMG/naharkhori2.jfif'},
