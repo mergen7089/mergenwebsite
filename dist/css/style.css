@@ -8022,3 +8022,208 @@ body.canvas-open {
         padding-bottom:22px !important;
     }
 }
+
+
+/* =========================================================
+   MERGEN DESIGN SYSTEM — DARK / LIGHT FOUNDATION
+   ========================================================= */
+
+:root {
+  --mg-bg: #f1eee7;
+  --mg-surface: #e8e3d8;
+  --mg-surface-2: #ddd7ca;
+  --mg-text: #17201c;
+  --mg-text-soft: #69736d;
+  --mg-accent: #1c4b3d;
+  --mg-accent-soft: #6e887a;
+  --mg-highlight: #a48662;
+  --mg-line: rgba(23,32,28,.13);
+}
+
+html.dark {
+  --mg-bg: #020605;
+  --mg-surface: #07110d;
+  --mg-surface-2: #0b1713;
+  --mg-text: #f1f4f1;
+  --mg-text-soft: #93a19a;
+  --mg-accent: #1c4b3d;
+  --mg-accent-soft: #79d6aa;
+  --mg-highlight: #b99a72;
+  --mg-line: rgba(255,255,255,.09);
+}
+
+/* =========================================================
+   FAQ — EDITORIAL ARCHITECTURAL VERSION
+   ========================================================= */
+
+#faq {
+  background:
+    radial-gradient(circle at 82% 15%, rgba(121,214,170,.055), transparent 28%),
+    var(--mg-bg);
+  color: var(--mg-text);
+}
+
+html.dark #faq {
+  background:
+    radial-gradient(circle at 82% 15%, rgba(121,214,170,.045), transparent 30%),
+    var(--mg-bg);
+}
+
+#faq .max-w-1000 {
+  max-width: 1180px;
+}
+
+#faq .text-center {
+  text-align: right;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: end;
+  gap: 28px;
+  margin-bottom: 70px !important;
+}
+
+#faq .eyebrow {
+  font-size: 10px;
+  letter-spacing: .22em;
+  color: var(--mg-accent-soft);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  justify-self: start;
+}
+
+#faq .section-title {
+  margin: 0 !important;
+  max-width: 720px;
+  font-size: clamp(42px, 6vw, 88px);
+  line-height: .98;
+  letter-spacing: -.045em;
+  color: var(--mg-text);
+}
+
+#faqList {
+  border-top: 1px solid var(--mg-line);
+}
+
+#faq .faq-item {
+  position: relative;
+  border-bottom: 1px solid var(--mg-line);
+  background: transparent;
+  padding: 0;
+  color: var(--mg-text);
+  transition: background .45s ease, padding .45s ease;
+}
+
+#faq .faq-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 1px;
+  background: var(--mg-accent-soft);
+  transition: width .55s ease;
+}
+
+#faq .faq-item.open {
+  padding: 0 28px;
+  background: color-mix(in srgb, var(--mg-accent) 7%, transparent);
+}
+
+#faq .faq-item.open::before {
+  width: 100%;
+}
+
+#faq .faq-q {
+  position: relative;
+  min-height: 92px;
+  padding: 24px 0;
+  gap: 30px;
+  color: var(--mg-text);
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 500;
+}
+
+#faq .faq-q::before {
+  content: "0" counter(faq);
+  counter-increment: faq;
+  min-width: 48px;
+  color: var(--mg-accent-soft);
+  font-family: Georgia, serif;
+  font-size: 13px;
+  direction: ltr;
+}
+
+#faqList {
+  counter-reset: faq;
+}
+
+#faq .faq-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--mg-line);
+  border-radius: 50%;
+  color: var(--mg-text-soft);
+  flex: 0 0 auto;
+  transition: transform .4s ease, border-color .4s ease, color .4s ease;
+}
+
+#faq .faq-item.open .faq-icon {
+  color: var(--mg-accent-soft);
+  border-color: var(--mg-accent-soft);
+}
+
+#faq .faq-a {
+  max-width: 720px;
+  margin-right: 76px;
+  padding: 0 0 28px;
+  color: var(--mg-text-soft);
+  font-size: 15px;
+  line-height: 2.2;
+}
+
+@media (max-width: 700px) {
+  #faq .text-center {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 45px !important;
+  }
+
+  #faq .eyebrow {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+  #faq .section-title {
+    font-size: 42px;
+  }
+
+  #faq .faq-item.open {
+    padding: 0 16px;
+  }
+
+  #faq .faq-q {
+    min-height: 78px;
+    font-size: 17px;
+  }
+
+  #faq .faq-a {
+    margin-right: 0;
+    padding-bottom: 24px;
+  }
+}
+
+/* =========================================================
+   DARK / LIGHT SURFACE NORMALIZATION
+   ========================================================= */
+
+html.dark body {
+  background: var(--mg-bg);
+  color: var(--mg-text);
+}
+
+html:not(.dark) body {
+  background: var(--mg-bg);
+  color: var(--mg-text);
+}
