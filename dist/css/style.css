@@ -1,13 +1,3 @@
-/* =========================================================
-   MERGEN CSS ARCHITECTURE / SECTION INDEX
-   01 Header · 02 Hero · 03 Layers · 04 Generic · 05 Slider01
-   06 Slider02 · 07 Contact · 08 Guide · 09 Collection
-   10 Materials · 11 Signature V3 · 12 Experience · 13 FAQ
-   14 About · 15 Footer · 16 Global UI · 17 Responsive
-   18 Theme
-   Existing cascade order is preserved intentionally.
-   ========================================================= */
-
 /*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
@@ -3345,7 +3335,7 @@ a {
 }
 
 /* ==================== 04 — GENERIC / SHARED ==================== */
-/* GENERIC */
+/* Base typography, reusable cards, utility patterns and shared section primitives. *//* GENERIC */
 .section-wrap {
     padding: 110px max(5vw, 25px);
     position: relative;
@@ -8202,6 +8192,7 @@ html.dark #faq {
 }
 
 /* ==================== 17 — THEME / DARK-LIGHT ==================== */
+/* Design tokens → component surfaces → FAQ theme → light-mode overrides. */
 /* =========================================================
    MERGEN DESIGN SYSTEM — DARK / LIGHT FOUNDATION
    ========================================================= */
